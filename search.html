@@ -60,6 +60,11 @@ padding: 4px;
     <p>Click on the squares to search for wild life</p>
     <p id="tries">Number of tries is zero</p>
     <p id="distance">Distance is unknown</p>
+    
+  <div style="text-align:center; width:100%; height:100%;">
+    <button type="button" class="btn btn-primary" onclick="newGame()">New game</button>
+    <br><br>
+  </div>
     <div class="container">
         <div class = "row">
             <div class = "column"><img src="images/plant.jpg" height="100" width="100" id="p1" onclick="check(0)"> </div>
@@ -153,5 +158,16 @@ padding: 4px;
             ret = document.getElementById("distance")
             ret.innerHTML = "Distance is "+ actualdistance
         }
+        function newGame(){
+            triesCount = 0
+            animalLocation = Math.floor(Math.random()*23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for(var i=0; i<24; i++){
+                if(ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "animal.jpg"
+                else
+                    document.getElementById(ids[i]).src = "plant.jpg"
+            }
+    }
     </script>
 </body>
